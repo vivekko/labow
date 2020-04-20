@@ -17,6 +17,3 @@ public:
 int main()
 {
     Solution s;
-    int ans = s.maxSubArray;
-    cout<<ans;
-}

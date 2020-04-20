@@ -9,22 +9,20 @@ public class HappyNumber {
         int arr[]= new int[10000];
         int sum =0;
         int i=0;
-        while(true){
+        int t=0;
+        while(t<20){
             while(n>0)
             {
-            n = n%10;
-            arr[i] = n;
+            dig = n%10;
             n = n/10;
-                i++;
+            sum += dig*dig;  
             }
-            for(int j:arr){
-                sum = sum + (arr[j]*arr[j]);
             }
             if(sum == 1)
                 return true;
             else 
                 n = sum;
-            
         }
+    return false;
     }
 }

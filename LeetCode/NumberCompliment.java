@@ -3,8 +3,8 @@ public class NumberCompliment {
         int cp = num;
         int sum = 0;
         while(num > 0){
-            sum = (sum << 1) + 1;
-            num >>= 1;
+            sum = (sum << 1) + 1; // sum << 1 = sum * 2;
+            num >>= 1; // num = num/2
         }
         return sum - cp;
         

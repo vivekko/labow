@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - A_Insomnia_cure",
+            "request": "launch",
+            "mainClass": "A_Insomnia_cure",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrivalofGeneral",
             "request": "launch",
             "mainClass": "ArrivalofGeneral",

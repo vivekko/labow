@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BoyOrGirl",
+            "request": "launch",
+            "mainClass": "BoyOrGirl",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WayTooLongWords",
             "request": "launch",
             "mainClass": "WayTooLongWords",

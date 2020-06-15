@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - IsYourHorseShoeOnTheOtherRoof",
+            "request": "launch",
+            "mainClass": "IsYourHorseShoeOnTheOtherRoof",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_helpful_Maths",
+            "request": "launch",
+            "mainClass": "A_helpful_Maths",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - A_Insomnia_cure",
             "request": "launch",
             "mainClass": "A_Insomnia_cure",

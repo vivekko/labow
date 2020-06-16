@@ -19,6 +19,7 @@ public class IsYourHorseShoeOnTheOtherRoof {
             h.add(temp);
         }
         System.out.println(ans);
+        sc.close();
 
         }
     

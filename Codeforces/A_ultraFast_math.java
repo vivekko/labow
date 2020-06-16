@@ -26,5 +26,6 @@ public class A_ultraFast_math {
         }
         String res = arr.toString();
         System.out.print(res);
+        sc.close();
     }
 }

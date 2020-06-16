@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - AmusingJoke",
+            "request": "launch",
+            "mainClass": "AmusingJoke",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BoyOrGirl",
             "request": "launch",
             "mainClass": "BoyOrGirl",

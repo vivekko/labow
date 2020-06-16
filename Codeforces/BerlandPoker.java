@@ -15,7 +15,7 @@ public class BerlandPoker
               {  first++; 
                 --m;
               }
-            int second = 0;
+            // int second = 0;
             if(m==0){
               System.out.println(first);
             }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class A_word{
+public class A_Word{
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String test = in.next();

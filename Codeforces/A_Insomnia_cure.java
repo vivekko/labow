@@ -14,6 +14,7 @@ public class A_Insomnia_cure {
         int d = in.nextInt();
         if(k==1||l==1||m==1||n==1){
             System.out.println(d);
+            in.close();
             return;
         }
         int drag  = 0;
@@ -23,6 +24,7 @@ public class A_Insomnia_cure {
 
         }
         System.out.println(d-drag);
+        in.close();
 
     }
 }

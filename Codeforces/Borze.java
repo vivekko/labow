@@ -38,7 +38,7 @@ public class Borze {
             }
             if(i>=test.length()-1){
                 System.out.print(test2); 
-            
+                sc.close();
                 return;
             }
 

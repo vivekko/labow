@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.lang.Math;
 import java.math.BigInteger; 
 public class NearlyLuckyNumber {
     public static void main(String[] args) {

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PetyaAndStrings",
+            "request": "launch",
+            "mainClass": "PetyaAndStrings",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HQ9",
+            "request": "launch",
+            "mainClass": "HQ9",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - AmusingJoke",
             "request": "launch",
             "mainClass": "AmusingJoke",

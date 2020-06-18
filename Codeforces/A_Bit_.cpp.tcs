@@ -1,0 +1,1 @@
+[{"input":"1\n++X","output":"1"},{"input":"2\nX++\n--X","output":"0"}]

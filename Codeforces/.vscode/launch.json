@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SupercentralPoint",
+            "request": "launch",
+            "mainClass": "SupercentralPoint",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JzzhuAndChildren",
+            "request": "launch",
+            "mainClass": "JzzhuAndChildren",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CodeforcesSubsequences",
+            "request": "launch",
+            "mainClass": "CodeforcesSubsequences",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PetyaAndStrings",
             "request": "launch",
             "mainClass": "PetyaAndStrings",

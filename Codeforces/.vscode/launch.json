@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - A_Little_Elephant_and_Rozdil",
+            "request": "launch",
+            "mainClass": "A_Little_Elephant_and_Rozdil",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - B_AccurateLee",
             "request": "launch",
             "mainClass": "B_AccurateLee",

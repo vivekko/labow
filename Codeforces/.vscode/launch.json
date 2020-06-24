@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - B_AccurateLee",
+            "request": "launch",
+            "mainClass": "B_AccurateLee",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EvenOdds",
+            "request": "launch",
+            "mainClass": "EvenOdds",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SupercentralPoint",
             "request": "launch",
             "mainClass": "SupercentralPoint",

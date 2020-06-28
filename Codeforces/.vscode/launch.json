@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - A_MagicNumber",
+            "request": "launch",
+            "mainClass": "A_MagicNumber",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - A_Little_Elephant_and_Rozdil",
             "request": "launch",
             "mainClass": "A_Little_Elephant_and_Rozdil",

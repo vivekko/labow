@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - A_Football",
+            "request": "launch",
+            "mainClass": "A_Football",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - A_Translation",
             "request": "launch",
             "mainClass": "A_Translation",

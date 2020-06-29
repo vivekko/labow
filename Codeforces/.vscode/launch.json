@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - B_Sale",
+            "request": "launch",
+            "mainClass": "B_Sale",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_RequiredRemainder",
+            "request": "launch",
+            "mainClass": "A_RequiredRemainder",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - A_Football",
             "request": "launch",
             "mainClass": "A_Football",

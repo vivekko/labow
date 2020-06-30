@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - A_Dubstep",
+            "request": "launch",
+            "mainClass": "A_Dubstep",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_BusinessTrip",
+            "request": "launch",
+            "mainClass": "A_BusinessTrip",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - C_MoveBrackets",
+            "request": "launch",
+            "mainClass": "C_MoveBrackets",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - A_SystemOfEquations",
             "request": "launch",
             "mainClass": "A_SystemOfEquations",

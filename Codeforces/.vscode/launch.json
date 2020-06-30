@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - B_Football",
+            "request": "launch",
+            "mainClass": "B_Football",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_KString",
+            "request": "launch",
+            "mainClass": "A_KString",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - A_Dubstep",
             "request": "launch",
             "mainClass": "A_Dubstep",

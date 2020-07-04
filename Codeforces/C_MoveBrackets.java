@@ -10,7 +10,6 @@ public class C_MoveBrackets {
         while(t-->0){
             int count = 0;
             int val = 0;
-            int len = in.nextInt();
             String ans = in.next();
             for(int i:ans.toCharArray()){
                 if(i == '('){

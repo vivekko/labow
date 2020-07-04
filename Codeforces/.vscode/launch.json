@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MagicalSticks",
+            "request": "launch",
+            "mainClass": "MagicalSticks",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - B_Football",
             "request": "launch",
             "mainClass": "B_Football",

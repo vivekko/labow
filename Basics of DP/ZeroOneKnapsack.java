@@ -1,7 +1,7 @@
 
 public class ZeroOneKnapsack{
     public static void main(String[] args) {
-        // Scanner in = new Scanner(System.in);?
+        // Scanner in = new S-canner(System.in);?
         int []val = new int[]{60,100,120};
         int []wt = new int[]{60,20,30};
         int W = 50;

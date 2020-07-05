@@ -28,3 +28,6 @@ int fiba(int n){
 // calculate them in a separate array,
 //  Time and Space is O(n) in this case
 
+
+// Weekly Status
+// 1) 

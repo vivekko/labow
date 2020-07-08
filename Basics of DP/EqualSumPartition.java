@@ -10,8 +10,7 @@ class Solution {
             boolean ans;
             ans = canSubset(nums,n,sum/2);
              return ans;
-        }
-           
+        }     
     }
     private boolean canSubset(int []arr,int n,int sum)
     {

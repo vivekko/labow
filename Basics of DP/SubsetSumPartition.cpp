@@ -16,7 +16,7 @@ int subsetSum(int arr[],int sum,int n){
             else
                 dp[i][j] = dp[i-1][j];
         }
-        return dp[n][sum];
+    return dp[n][sum];
 }
 int main()
 {

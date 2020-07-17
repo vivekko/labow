@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - A_Between_the_Offices",
+            "request": "launch",
+            "mainClass": "A_Between_the_Offices",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ThreeIndices",
             "request": "launch",
             "mainClass": "ThreeIndices",

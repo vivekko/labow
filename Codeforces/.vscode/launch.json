@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - B_PashmakAndFlowers",
+            "request": "launch",
+            "mainClass": "B_PashmakAndFlowers",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_AcaciusAndString",
+            "request": "launch",
+            "mainClass": "A_AcaciusAndString",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - A_Between_the_Offices",
             "request": "launch",
             "mainClass": "A_Between_the_Offices",

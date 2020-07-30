@@ -1,0 +1,1 @@
+[{"input":"7\n7\n23\n31\n36\n44\n100\n258","output":"NO\nNO\nYES\n14 10 6 1\nYES\n5 6 10 15\nYES\n6 7 10 21\nYES\n2 10 33 55\nYES\n10 21 221 6"},{"input":"7\n40\n23\n31\n36\n44\n100\n258","output":"NO\nNO\nYES\n6 10 14 1\nYES\n6 10 15 5\nYES\n6 10 15 13\nYES\n6 10 14 70\nYES\n6 10 14 228"}]

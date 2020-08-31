@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f2ebcaa6d15, pid=30271, tid=33476
+#
+# JRE version: OpenJDK Runtime Environment (13.0.2+8) (build 13.0.2+8)
+# Java VM: OpenJDK 64-Bit Server VM (13.0.2+8, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x2d15]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h" (or dumping to /home/dexter/Desktop/labow/AtCoder/core.30271)
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:33975 -Dfile.encoding=UTF-8 WalkingTakashi
+
+Host: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz, 4 cores, 3G, Manjaro Linux
+Time: Fri Aug 28 11:15:01 2020 IST elapsed time: 2083 seconds (0d 0h 34m 43s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f2e70001800):  JavaThread "SIGHUP handler" daemon [_thread_in_vm, id=33476, stack(0x00007f2eb7eff000,0x00007f2eb8000000)]
+
+Stack: [0x00007f2eb7eff000,0x00007f2eb8000000],  sp=0x00007f2eb7ffd070,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x2d15]
+C  [libjimage.so+0x38ce]
+C  [libjimage.so+0x3dc4]  JIMAGE_FindResource+0x104
+V  [libjvm.so+0x5b2932]

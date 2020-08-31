@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - JugglingLetters",
+            "request": "launch",
+            "mainClass": "JugglingLetters",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - B_OmkarANDINFINITYCLOCK",
+            "request": "launch",
+            "mainClass": "B_OmkarANDINFINITYCLOCK",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_OmkarAndPass",
+            "request": "launch",
+            "mainClass": "A_OmkarAndPass",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - B_PashmakAndFlowers",
             "request": "launch",
             "mainClass": "B_PashmakAndFlowers",

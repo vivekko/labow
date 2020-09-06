@@ -26,54 +26,27 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-#define ll long long 
-#define pb push_back
+
 
 void solve(){
-    int m,n;
-    cin>>m>>n;
-    int count = 0;
-    if(m==1 && n ==1)
-    {
-        count = 0;
+    string chota;
+    cin>>chota;
+    int z = 0;
+    int o = 0;
+    for(char c:chota){
+        if(c == '0')
+            ++z;
+        else
+            ++o;
     }
-    else if(m == 1){
-        string val;
-        cin>>val;
-        for(char c:val){
-            if(c == 'D'){
-                ++count;
-            }
-        }
-    }
-    else if(n == 1){
-        for(int i=0;i<m;i++){
-        char val;
-        cin>>val;
-            if(val == 'R'){
-                ++count;
-            }
-        }
-    }
-    else {
-    for(int i=0;i<m;i++){
-        string val;
-        cin>>val;
-        for(int j=0;j<val.length();j++){
-            if(j==n-1 && val[j] == 'R'){
-                ++count;
-            }
-            if(i == m-1 && val[j] == 'D'){
-                ++count;
-                
-            }
+    if(min(o,z)%2 == 0)
+        cout<<"NET";
+    else
+        cout<<"DA";
 
-        }
-    }
-    }
-    cout<<count<<"\n";
-
+    cout<<"\n";
 }
+
 int main(){
 int t;
 cin>>t;
@@ -81,3 +54,14 @@ while(t-->0)
     solve();
 return 0;
 }
+
+        // 1011001(A) ->  11001(B) -> 101(A) -> 1(B)
+        // 4
+        // 3
+
+        // 01(A)
+        
+
+        // 111100(A) -> 1110(B) -> 11(A)
+        // 4
+        // 2

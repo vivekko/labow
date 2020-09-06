@@ -26,57 +26,31 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-#define ll long long 
-#define pb push_back
-
+// bool isPalin(string s){
+//     for(int i=0;i<s.length()/2;i++){
+//         if(s[i]!=s[s.length()-1-i])
+//             return false;
+//     }
+//     return true;
+// }
 void solve(){
-    int m,n;
-    cin>>m>>n;
-    int count = 0;
-    if(m==1 && n ==1)
-    {
-        count = 0;
-    }
-    else if(m == 1){
-        string val;
-        cin>>val;
-        for(char c:val){
-            if(c == 'D'){
-                ++count;
-            }
-        }
-    }
-    else if(n == 1){
-        for(int i=0;i<m;i++){
-        char val;
-        cin>>val;
-            if(val == 'R'){
-                ++count;
-            }
-        }
-    }
-    else {
-    for(int i=0;i<m;i++){
-        string val;
-        cin>>val;
-        for(int j=0;j<val.length();j++){
-            if(j==n-1 && val[j] == 'R'){
-                ++count;
-            }
-            if(i == m-1 && val[j] == 'D'){
-                ++count;
-                
-            }
-
-        }
-    }
-    }
-    cout<<count<<"\n";
-
+    string s;
+    int cnt[26];
+    cin>>s;
+    for (int i=0; i<s.size(); ++i)
+        cnt[s[i]-'a']++;
+    int odd=0;
+    for (int i=0; i<26; ++i)
+        if (cnt[i]&1)
+            odd++;
+    if ((odd==0) || (odd&1))
+        cout<<"First"<<endl;
+    else
+        cout<<"Second"<<endl;
 }
 int main(){
-int t;
-cin>>t;
+int t = 1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;

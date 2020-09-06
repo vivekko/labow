@@ -26,53 +26,26 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-#define ll long long 
-#define pb push_back
-
 void solve(){
-    int m,n;
-    cin>>m>>n;
-    int count = 0;
-    if(m==1 && n ==1)
-    {
-        count = 0;
-    }
-    else if(m == 1){
-        string val;
+    int n;
+    cin>>n;
+    vector<int> v;
+    int val;
+    int err1 = 0;
+    int err0 = 0;
+    for(int i=0;i<n;i++){
         cin>>val;
-        for(char c:val){
-            if(c == 'D'){
-                ++count;
-            }
-        }
+        v.push_back(val);
+        if(i%2==0 && val%2!=0)
+            err1++;
+        else if(i%2!=0 && val%2==0)
+            err0++;
     }
-    else if(n == 1){
-        for(int i=0;i<m;i++){
-        char val;
-        cin>>val;
-            if(val == 'R'){
-                ++count;
-            }
-        }
+    if(err0!=err1){
+        cout<<"-1"<<endl;
     }
-    else {
-    for(int i=0;i<m;i++){
-        string val;
-        cin>>val;
-        for(int j=0;j<val.length();j++){
-            if(j==n-1 && val[j] == 'R'){
-                ++count;
-            }
-            if(i == m-1 && val[j] == 'D'){
-                ++count;
-                
-            }
-
-        }
-    }
-    }
-    cout<<count<<"\n";
-
+    else
+        cout<<err1<<endl;
 }
 int main(){
 int t;

@@ -26,53 +26,25 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-#define ll long long 
-#define pb push_back
-
+long long sol(long long a,long long x,long long b,long long y,long long n){
+    if(a-n >= x)
+        a-=n;
+    else{
+        long long temp = a;
+        a = x;
+        b = b -(n-temp+x);
+        if(b<y)
+            b = y;
+    }
+    // debug(a);
+    // debug(b);
+    return a*b;
+}
 void solve(){
-    int m,n;
-    cin>>m>>n;
-    int count = 0;
-    if(m==1 && n ==1)
-    {
-        count = 0;
-    }
-    else if(m == 1){
-        string val;
-        cin>>val;
-        for(char c:val){
-            if(c == 'D'){
-                ++count;
-            }
-        }
-    }
-    else if(n == 1){
-        for(int i=0;i<m;i++){
-        char val;
-        cin>>val;
-            if(val == 'R'){
-                ++count;
-            }
-        }
-    }
-    else {
-    for(int i=0;i<m;i++){
-        string val;
-        cin>>val;
-        for(int j=0;j<val.length();j++){
-            if(j==n-1 && val[j] == 'R'){
-                ++count;
-            }
-            if(i == m-1 && val[j] == 'D'){
-                ++count;
-                
-            }
-
-        }
-    }
-    }
-    cout<<count<<"\n";
-
+    long long a,b,x,y,n;
+    cin>>a>>b>>x>>y>>n;   
+    long long res = min(sol(a,x,b,y,n),sol(b,y,a,x,n));
+    cout<< res<<"\n";
 }
 int main(){
 int t;

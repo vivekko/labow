@@ -26,57 +26,48 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-#define ll long long 
-#define pb push_back
-
 void solve(){
-    int m,n;
-    cin>>m>>n;
+    int n;
+    int s1,s2,e1,e2;
+    string val;
+    cin>>n>>s1>>s2>>e1>>e2>>val;
+    int close = s1-e1;
+    int close2 = s2 - e2;
     int count = 0;
-    if(m==1 && n ==1)
+    for(char c:val)
     {
-        count = 0;
-    }
-    else if(m == 1){
-        string val;
-        cin>>val;
-        for(char c:val){
-            if(c == 'D'){
-                ++count;
-            }
+        if( c == 'E'){
+            if(abs(s1-e1) > abs(s1+1-e1))
+                ++s1;
         }
-    }
-    else if(n == 1){
-        for(int i=0;i<m;i++){
-        char val;
-        cin>>val;
-            if(val == 'R'){
-                ++count;
-            }
+        if( c == 'N'){
+            if(abs(s2-e2) > abs(s2+1-e2))
+                ++s2;
         }
-    }
-    else {
-    for(int i=0;i<m;i++){
-        string val;
-        cin>>val;
-        for(int j=0;j<val.length();j++){
-            if(j==n-1 && val[j] == 'R'){
-                ++count;
-            }
-            if(i == m-1 && val[j] == 'D'){
-                ++count;
-                
-            }
 
+        if( c == 'S'){
+            if(abs(s2-e2) > abs(s2-1-e2))
+                --s2;
+        }
+
+        if( c == 'W'){
+            if((s1-e1) > s1-1-e1)
+                --s1;
+        }
+        ++count;
+        debug(c);
+        debug(s1);
+        debug(s2);
+        if(s1 == e1 && s2 == e2){
+            cout<<count;
+            return;
         }
     }
-    }
-    cout<<count<<"\n";
 
 }
 int main(){
-int t;
-cin>>t;
+int t =1 ;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;

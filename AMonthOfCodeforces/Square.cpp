@@ -26,54 +26,36 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-#define ll long long 
-#define pb push_back
-
 void solve(){
-    int m,n;
-    cin>>m>>n;
-    int count = 0;
-    if(m==1 && n ==1)
-    {
-        count = 0;
-    }
-    else if(m == 1){
-        string val;
-        cin>>val;
-        for(char c:val){
-            if(c == 'D'){
-                ++count;
-            }
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    int r = 0;
+    if(a == c){
+        if(b+d == a){
+            cout<<"Yes"<<"\n";
+            r = 1;
         }
     }
-    else if(n == 1){
-        for(int i=0;i<m;i++){
-        char val;
-        cin>>val;
-            if(val == 'R'){
-                ++count;
-            }
+    else if(a == d){
+         if(b+c == a){
+            cout<<"Yes"<<"\n";r = 1;
         }
-    }
-    else {
-    for(int i=0;i<m;i++){
-        string val;
-        cin>>val;
-        for(int j=0;j<val.length();j++){
-            if(j==n-1 && val[j] == 'R'){
-                ++count;
-            }
-            if(i == m-1 && val[j] == 'D'){
-                ++count;
-                
-            }
 
+    }
+    else if(b == c){
+         if(a+d == c){
+            cout<<"Yes"<<"\n";r  = 1;
         }
     }
+    else if(b == d){
+         if(a+c == d){
+            cout<<"Yes"<<"\n";r = 1;
+         }
     }
-    cout<<count<<"\n";
-
-}
+    if(!r)
+        cout<<"No"<<"\n";
+    
+    }
 int main(){
 int t;
 cin>>t;
@@ -81,3 +63,5 @@ while(t-->0)
     solve();
 return 0;
 }
+
+    //  8888888888 888888888888

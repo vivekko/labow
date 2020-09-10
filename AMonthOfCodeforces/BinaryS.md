@@ -26,3 +26,13 @@ Solution: we can find by (x/a)*(x/b) >=n
           Apply Binary Search to find min r 
 ____________________________________________________________________________
 
+Suppose you have n ropes of integer length, You have to cut it into k pieces of equal size. return the
+value with which you can cut max length.
+
+Solution: we can find it by summing up the values after cutting and checking if it is in the bounds
+          f(x) = 1 if we can cut the rope 
+          f(x) = 0 if we can't
+          l will be 0 and r will be 100(Since it's real values 100 is the safest)
+          Yeah that's it
+_____________________________________________________________________________
+

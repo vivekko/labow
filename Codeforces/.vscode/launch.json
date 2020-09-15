@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ProdSum",
+            "request": "launch",
+            "mainClass": "ProdSum",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Torch",
+            "request": "launch",
+            "mainClass": "Torch",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - JugglingLetters",
             "request": "launch",
             "mainClass": "JugglingLetters",

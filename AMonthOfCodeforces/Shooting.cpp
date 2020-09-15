@@ -26,31 +26,31 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-void solve(){
+
+struct node{
+    int x,id;
+}a[1010];
+bool cmp(node x,node y)
+{
+    return x.x<y.x;
+}
+int main()
+{
+    ios::sync_with_stdio(false);
     int n;
     cin>>n;
-    vector<long long> arr(n);
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    for(int i=1;i<=n;++i) cin>>a[i].x,a[i].id=i;
+    sort(a+1,a+n+1,cmp);
+    long long  t=0;
+    for(int i=n;i>=1;i--)
+    {
+        t+=(n-i)*a[i].x+1;
     }
-    sort(arr.begin(),arr.end());
-    long long sumy = 0;
-    long long sumx = 0;
-    for(int i=0;i<n/2;i++){
-        sumx += arr[i];
+    cout<<t<<endl;
+    for(int i=n;i>=1;i--)
+    {
+        cout<<a[i].id<<" ";
     }
-    for(int i=n/2;i<n;i++){
-        sumy += arr[i];
-    }
-    // debug(sumx,sumy);
-    long long ret = (sumx*sumx) + (sumy*sumy);
-    cout<< ret;
-
-}
-int main(){
-int t =1 ;
-// cin>>t;
-while(t-->0)
-    solve();
-return 0;
+    cout<<endl;
+    return 0;
 }

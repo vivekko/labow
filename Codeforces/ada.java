@@ -5,13 +5,18 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class ACC {
+public class Main {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
-         int T=fs.nextInt();
+        //  int T=fs.nextInt();
+        int T =1 ;
          for (int tt=0; tt<T; tt++) {
-            
-                 }
+             int x = fs.nextInt();
+             if(x==0)
+             System.out.println(1);
+             else
+                System.out.println(0);
+         }
 }
  
  static class FastScanner {

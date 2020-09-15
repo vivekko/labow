@@ -27,29 +27,12 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 void solve(){
-    int n;
-    cin>>n;
-    vector<long long> arr(n);
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
-    sort(arr.begin(),arr.end());
-    long long sumy = 0;
-    long long sumx = 0;
-    for(int i=0;i<n/2;i++){
-        sumx += arr[i];
-    }
-    for(int i=n/2;i<n;i++){
-        sumy += arr[i];
-    }
-    // debug(sumx,sumy);
-    long long ret = (sumx*sumx) + (sumy*sumy);
-    cout<< ret;
+        
 
 }
 int main(){
-int t =1 ;
-// cin>>t;
+int t;
+cin>>t;
 while(t-->0)
     solve();
 return 0;

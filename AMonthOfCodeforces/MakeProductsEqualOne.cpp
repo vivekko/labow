@@ -27,28 +27,52 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 void solve(){
-    int n;
+    long long n;
     cin>>n;
     vector<long long> arr(n);
+    long long spent = 0;
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    sort(arr.begin(),arr.end());
-    long long sumy = 0;
-    long long sumx = 0;
-    for(int i=0;i<n/2;i++){
-        sumx += arr[i];
-    }
-    for(int i=n/2;i<n;i++){
-        sumy += arr[i];
-    }
-    // debug(sumx,sumy);
-    long long ret = (sumx*sumx) + (sumy*sumy);
-    cout<< ret;
+ 
+    for(int i=0;i<n;i++){
+        if(arr[i] > 1){
+            spent += arr[i] - 1;
+            arr[i] = 1;
 
-}
+        }
+        else if(arr[i]<-1){
+            spent+= abs(arr[i] + 1);
+            arr[i] = -1;
+        }
+        // else if(arr[i] == 0){
+        //     spent++;
+        //     arr[i] = 1;
+        // }
+        // debug(spent,arr[i]);
+    }
+    long long count = 0;
+    long long c = 0;
+    for(int i=0;i<n;i++){
+		if(arr[i]==-1){
+			count++;
+		}
+		else if(arr[i]==0){
+			c++;
+		}
+	}
+	if(count&1){
+		if(c>=1)
+		    cout<<spent+c;
+		else
+		    cout<<spent+2;
+	}
+	else
+		cout<<spent+c;
+} 
+
 int main(){
-int t =1 ;
+int t = 1;
 // cin>>t;
 while(t-->0)
     solve();

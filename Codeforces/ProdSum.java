@@ -5,13 +5,20 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class ACC {
+public class ProdSum {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
-         int T=fs.nextInt();
+         int T=1;
          for (int tt=0; tt<T; tt++) {
-            
-                 }
+                long a = fs.nextLong(),b = fs.nextLong(),c = fs.nextLong(),d = fs.nextLong();
+                long ans;
+                ans =       a*c;
+                long ans1 = a*d;
+                long ans2 = b*c;
+                long ans3 = b*d;
+                System.out.println(Math.max(ans,Math.max(ans1, Math.max(ans2, ans3))));     
+
+}
 }
  
  static class FastScanner {

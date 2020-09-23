@@ -5,39 +5,19 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class Ano {
+public class Bogosort {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
          int T=fs.nextInt();
-        // int T = 1;
          for (int tt=0; tt<T; tt++) {
             int n = fs.nextInt();
-            int[] count = new int[102];
-            Arrays.fill(count, 0);
-            int []values = fs.readArray(n); 
+            int arr[] = fs.readArray(n);
+            Arrays.sort(arr);
             for(int i=0;i<n;i++){
-                count[values[i]]++;
-            }      
-            int mex1 = -1,mex2 =-1 ;
-            int i;
-            for(i=0;i<102;i++){
-                if(count[i] <= 0){
-                    mex1 = i;
-                    count[i]--;
-                    break;
-                }
-                count[i]--;
-            }   u   u                                                                                                                                       
-
-            for(i=0;i<102;i++){
-                if(count[i] <= 0){
-                    mex2 = i;
-                    break;
-                }
-            }
-            System.out.println(mex1+mex2);
+                System.out.print(arr[n-1-i]+" ");
+            }       
+            System.out.println();     
         }
-        
 }
  
  static class FastScanner {

@@ -1,11 +1,3 @@
-
-// ___.   .__                 __          .__              __    
-// \_ |__ |  | _____    ____ |  | _____  _|__|__  __ ____ |  | __
-//  | __ \|  | \__  \ _/ ___\|  |/ /\  \/ /  \  \/ // __ \|  |/ /
-//  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
-//  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
-//      \/          \/     \/     \/                    \/     \/
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,15 +5,23 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class E {
+public class DiceTower {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
          int T=fs.nextInt();
          for (int tt=0; tt<T; tt++) {
-                    
-                 }
-}
- 
+             long n = fs.nextLong();
+            if((n%14==1||n%14==2||n%14==3||n%14==4||n%14==5||n%14==6)&&n>14)
+            {
+                System.out.println("YES");
+            }
+            else
+            {
+               System.out.println("NO");
+            }
+        }
+    }
+
  static class FastScanner {
      BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
      StringTokenizer st=new StringTokenizer("");

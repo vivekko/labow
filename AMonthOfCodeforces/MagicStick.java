@@ -13,13 +13,25 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class E {
+public class MagicStick {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
          int T=fs.nextInt();
          for (int tt=0; tt<T; tt++) {
-                    
-                 }
+            int x = fs.nextInt(), y = fs.nextInt();
+            if(y<=x)
+            {
+               System.out.println("Yes");
+            }
+            else
+            {
+                if(x==2 && y==3)
+                   System.out.println("Yes");
+                else if(x<=3)
+                 System.out.println("No");
+                else
+                    System.out.println("Yes");
+            }}
 }
  
  static class FastScanner {

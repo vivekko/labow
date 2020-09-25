@@ -13,26 +13,26 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class RoomAndStaircases {
+public class StringEqualization {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
          int T=fs.nextInt();
          for (int tt=0; tt<T; tt++) {
-            int n = fs.nextInt();
-            String val = fs.next();
-            int sp = -1;
-            int ep = -1;
-            for(int i=0;i<n;i++){
-                if(val.charAt(i) == '1')    sp = i+1;
-                if(val.charAt(n-1-i) == '1') ep = i+1;
-            }
-            int ss = n;
-            if(sp!=-1 && ep!=-1)
-                ss = 2*(Math.max(sp,ep));
-
-            System.out.println(ss);
-
-         }
+                    String s = fs.next(),t = fs.next();
+                    boolean flag = false;
+                    for(int i=0;i<s.length();i++){
+                        for(int j=0;j<t.length();j++){
+                            if(s.charAt(i) == t.charAt(j)){
+                                flag = true;
+                                System.out.println("Yes");
+                                break;
+                            }
+                        }
+                        if(flag) break;
+                    }
+                    if(!flag)
+                    System.out.println("No");
+                 }
 }
  
  static class FastScanner {

@@ -12,27 +12,37 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
+import java.util.Vector;
 
-public class RoomAndStaircases {
+public class RockAndLever {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
          int T=fs.nextInt();
          for (int tt=0; tt<T; tt++) {
             int n = fs.nextInt();
-            String val = fs.next();
-            int sp = -1;
-            int ep = -1;
-            for(int i=0;i<n;i++){
-                if(val.charAt(i) == '1')    sp = i+1;
-                if(val.charAt(n-1-i) == '1') ep = i+1;
-            }
-            int ss = n;
-            if(sp!=-1 && ep!=-1)
-                ss = 2*(Math.max(sp,ep));
-
-            System.out.println(ss);
-
-         }
+            int arr[] = fs.readArray(n);
+            int count = 0;
+            int k = 0;
+            int store[][] = new int[n][2];
+            for(int i=0;i<n-1;i++){
+                for(int j=i+1;j<n;j++){
+                    int val = arr[i]&arr[j];
+                    int val2 = arr[i]^arr[j];
+                    if(val >= val2) {
+                        count++;
+                    store[k][0] = arr[i];
+                    store[k][1] = arr[j];
+                    ++k;
+                }
+            }     
+         
+        }
+        System.out.println(count);
+        for(int i=0;i<n;i++)
+        for(int j=0;j<2;j++)
+        System.out.print(store[i][j]+" ");
+        System.out.println();
+        }
 }
  
  static class FastScanner {

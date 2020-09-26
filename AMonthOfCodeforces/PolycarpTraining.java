@@ -9,17 +9,39 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
+// import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-public class E {
-     public static void main(String[] args) {
+public class PolycarpTraining {
+         public static void main(String[] args) {
          FastScanner fs=new FastScanner();
-         int T=fs.nextInt();
+         int T=1;
          for (int tt=0; tt<T; tt++) {
-                    
-                 }
+            int n = fs.nextInt();
+            // HashSet<Integer> hs = new HashSet<>();
+            List<Integer> arr = new ArrayList<>();
+            for(int i=0;i<n;i++){
+                int val = fs.nextInt();
+                // if(!hs.contains(val))
+                    arr.add(val);
+                // hs.add(val);
+            }
+            Collections.sort(arr);
+            // int k = 0;
+            int j = 1;
+            for(int i=0;i<arr.size();i++){
+                    if(arr.get(i)>= j)
+                        ++j;
+                    else    continue;
+            }
+            System.out.println(j-1);
+         }
 }
  
  static class FastScanner {

@@ -29,21 +29,28 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int  n;
+    int n;
     cin>>n;
-    vector<int> arr(n);
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    string val;
+    cin>>val;
+    int countl = 0;
+    int countr = 0;
+    int countu = 0;
+    int countd = 0;
+    for(char c:val){
+        if(c == 'L')
+            countl++;
+        else if(c == 'U')
+            countu++;
+        else if(c == 'D')
+            countd++;
+        else 
+            countr++;
     }
-    int ans = 0;
-	for (int i = 1; i < n - 1; ++i) {
-		if (arr[i] == 0 && arr[i - 1] == 1 && arr[i + 1] == 1) {
-			++ans;
-			arr[i + 1] = 0;
-		}
-	}
-	cout << ans << endl;
-
+    int ans1 = min(countd,countu);
+    int ans2 = min(countl,countr);
+    int ans = 2*ans1 + 2*ans2;
+    cout<<ans;
 }
 int32_t vivek(){
 int t=1;

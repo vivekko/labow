@@ -29,20 +29,24 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int  n;
+    int n;
     cin>>n;
     vector<int> arr(n);
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    int ans = 0;
-	for (int i = 1; i < n - 1; ++i) {
-		if (arr[i] == 0 && arr[i - 1] == 1 && arr[i + 1] == 1) {
-			++ans;
-			arr[i + 1] = 0;
-		}
-	}
-	cout << ans << endl;
+    int mx = -1;
+    bool f = false;
+    for(int i=0;i<n;i++){
+        if(arr[i]>mx+1){
+            cout<<i+1;
+            f = true;
+            break;
+        }
+        mx = max(mx,arr[i]);
+    }
+    if(!f)
+    cout<<"-1";
 
 }
 int32_t vivek(){

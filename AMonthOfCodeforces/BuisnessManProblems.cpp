@@ -28,23 +28,33 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
-void solve(){
-    int  n;
-    cin>>n;
-    vector<int> arr(n);
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+bool comp(pair<int,int> &a, pair<int,int> &b) {
+    if (a.first == b.first) {
+        return a.second > b.second;
     }
-    int ans = 0;
-	for (int i = 1; i < n - 1; ++i) {
-		if (arr[i] == 0 && arr[i - 1] == 1 && arr[i + 1] == 1) {
-			++ans;
-			arr[i + 1] = 0;
-		}
-	}
-	cout << ans << endl;
-
+    return a.first < b.first;
 }
+void solve(){
+    int n;
+    cin >> n;
+    vector<pair<int, int> > a(n);
+    for (int i = 0; i < n; i++) cin >> a[i].first >> a[i].second;
+    int m;
+    cin >> m;
+    a.resize(n + m);
+    for (int i = 0; i < m; i++) cin >> a[i + n].first >> a[i + n].second;
+    sort(a.begin(), a.end(), comp);
+    int prev = a[0].first;
+    int ans = a[0].second;
+    for (int i = 1; i < n + m; i++) {
+        if (a[i].first == prev) continue;
+        prev = a[i].first;
+        ans += a[i].second;
+    }
+    cout << ans << "\n";
+ 
+}
+
 int32_t vivek(){
 int t=1;
 // cin>>t;

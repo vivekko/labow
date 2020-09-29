@@ -29,20 +29,26 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n,m;
-    cin>>n>>m;
-    string a,b;
-    cin>>a>>b;
-    for(int i=0;i<m-n;i++){
-        while(true){
-            
+    int n;
+    cin>>n;
+    string val;
+    cin>>val;
+    if(n>26){
+        cout<<-1;
+        return;
+    }
+    int ans = 0;
+    vector<int> freq(26);
+    for(char c:val){
+        if(freq[c-'a']++!=0){
+            ans++;
         }
     }
-
+    cout<<ans;
 }
 int32_t vivek(){
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;

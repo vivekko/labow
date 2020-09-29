@@ -16,9 +16,17 @@ import java.util.StringTokenizer;
 public class ThreePalin {
      public static void main(String[] args) {
          FastScanner fs=new FastScanner();
-         int T=fs.nextInt();
+         int T=1;
          for (int tt=0; tt<T; tt++) {
-            
+            int n = fs.nextInt();
+            String ans = "aabb";
+            int j = 0;
+            for(int i=0;i<n;i++){
+                System.out.print(ans.charAt(j++));
+                if(j == ans.length()){
+                    j = 0;
+                }
+            }
          }
 }
  

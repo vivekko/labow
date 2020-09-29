@@ -29,20 +29,15 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n,m;
-    cin>>n>>m;
-    string a,b;
-    cin>>a>>b;
-    for(int i=0;i<m-n;i++){
-        while(true){
-            
-        }
-    }
-
+    string n;
+    cin>>n;
+    string v = n;
+    reverse(n.begin(),n.end());
+    cout<<v+n;
 }
 int32_t vivek(){
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;

@@ -1,1 +1,1 @@
-# My Code Records on Comp. Prog.
+# My Code Records on Competitive Programming

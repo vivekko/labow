@@ -28,46 +28,19 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
-#define sz(a) a.size()
-const int N = 0;
- 
-vector <int> convert(int x) {
-    vector <int> res;
-    do {
-        res.push_back(x % 3);
-        x /= 3;
-    }
-    while (x > 0);
-    return res;
+void solve(){
+int a,b,c,d;
+cin>>a>>b>>c;
+d = max(a,max(b,c));
+cout<<d+1<<"\n";
+
 }
- 
-int main() {
- 
-    int a, b, c;
-    scanf("%d%d", &a, &c);
-    
-    vector <int> va, vb, vc;
-    va = convert(a);
-    vc = convert(c);
-    
-    while (sz(va) != sz(vc)) {
-        if (sz(va) > sz(vc)) vc.push_back(0);
-        else va.push_back(0);
-    }
-    
-    for (int i = 0; i < sz(va); ++i) {
-        vb.push_back(0);
-        for (vb[i] = 0; vb[i] < 3; ++vb[i])
-            if ((vb[i] + va[i]) % 3 == vc[i]) break;
-    }
- 
-    b = 0;
-    for (int i = sz(vb) - 1; i >= 0; i--)
-        b = b * 3 + vb[i];
-        
-    printf("%d\n", b);
- 
-    return 0;
+int32_t vivek(){
+int t;
+cin>>t;
+while(t-->0)
+    solve();
+return 0;
 }
 
 // ___.   .__                 __          .__              __    

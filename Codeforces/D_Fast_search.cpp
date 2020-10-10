@@ -29,30 +29,56 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-   int n,m;
-   cin>>n>>m;
-   int arr[n][m];
-    int sum =0 ;
-   for(int i=0;i<n;i++){   // 3
-                              // 4 
-       for(int j=0;j<m;j++){
-           cin>>arr[i][j];
-           sum+=arr[i][j];
-       }
-   }
-    sort
-    int val = ceil((float)sum/(n*m));
-    int ans = 0;
+    int n;
+    cin>>n;
+    vector<int> arr(n);
     for(int i=0;i<n;i++){
-       for(int j =0 ;j<m;j++){
-           ans += abs(val - arr[i][j]);
-       }
-   }
-   cout<<ans<<"\n";
+        cin>>arr[i];
+    }
+    sort(arr.begin(),arr.end());
+    int k;
+    cin>>k;
+    while(k-->0){
+        int range1,range2;
+        cin>>range1>>range2;
+        int l = -1;
+        int r = n;
+        while(r>l+1){
+            int mid = (l+r)/2;
+            if(arr[mid]<=range1){
+                l = mid;
+            }
+            else{
+                r = mid;
+            }
+            // debug(range1,mid,arr);
+        }
+
+        // debug(l,r);
+        int ans1 = l;
+
+        l = -1;
+        r = n;
+        while(r>l+1){
+            int mid = (l+r)/2;
+            if(arr[mid]<range2){
+                l = mid;
+            }
+            else{
+                r = mid;
+            }
+            // debug(range2,mid,arr);
+        }
+        // debug(l,r);
+        int ans2 = r;
+        cout<<ans2 - ans1<<" ";
+        
+    }
+    
 }
 int32_t vivek(){
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;
@@ -64,13 +90,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-
-
-//                a -------- b
-//  c--------d
-
-//  a-----------b
-//     c------------d
-
-//     a----------b
-// c---------d

@@ -28,31 +28,34 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
+
+
+bool isgood(int x,int a,int b,int n){
+    return (x/a)*(x/b) >= n;
+}
+
 void solve(){
-   int n,m;
-   cin>>n>>m;
-   int arr[n][m];
-    int sum =0 ;
-   for(int i=0;i<n;i++){   // 3
-                              // 4 
-       for(int j=0;j<m;j++){
-           cin>>arr[i][j];
-           sum+=arr[i][j];
-       }
-   }
-    sort
-    int val = ceil((float)sum/(n*m));
-    int ans = 0;
-    for(int i=0;i<n;i++){
-       for(int j =0 ;j<m;j++){
-           ans += abs(val - arr[i][j]);
-       }
-   }
-   cout<<ans<<"\n";
+    int a,b,n;
+    cin>>a>>b>>n;
+    int l = 0;
+    int r = 1;
+    while(!isgood(r,a,b,n)){
+        r = r*2;
+    }
+    while(r>l+1){
+        int mid = (l+r)/2;
+        if(isgood(mid,a,b,n)){
+            r = mid;
+        }
+        else{
+            l = mid;
+        }
+    }
+    cout<<r;
 }
 int32_t vivek(){
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;
@@ -64,13 +67,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-
-
-//                a -------- b
-//  c--------d
-
-//  a-----------b
-//     c------------d
-
-//     a----------b
-// c---------d

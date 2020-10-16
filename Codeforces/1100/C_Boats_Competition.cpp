@@ -30,42 +30,27 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define vivek main
 void solve(){
     int n;
-    cin>>n;
-    vector<int> arr(n);
-    for(int &i:arr){
-        cin>>i;
+		cin >> n;
+		vector<int> cnt(n + 1);
+		for (int i = 0; i < n; ++i) {
+			int x;
+			cin >> x;
+			++cnt[x];
+		}
+		int ans = 0;
+		for (int s = 2; s <= 2 * n; ++s) {
+			int cur = 0;
+			for (int i = 1; i < (s + 1) / 2; ++i) {
+				if (s - i > n) continue;
+				cur += min(cnt[i], cnt[s - i]);
+			}
+			if (s % 2 == 0) cur += cnt[s / 2] / 2;
+			ans = max(ans, cur);
+		}
+		cout << ans << endl;
+	
     }
-    sort(arr.begin(),arr.end());
-    vector<int> sums(50);
-    for(int i=0;i<n/2;i++){
-        sums[arr[i] + arr[n-1-i]]++;
-    }
-    // debug(sums);
 
-    int mx = *max_element(sums.begin(),sums.end());
-    // int val = *find(sums.begin(),sums.end(),mx);
-    // cout<<val;
-    // cout<<mx<<"\n";
-    int j = n-1;
-    int count  =0;
-    int i = 0;
-
-   while(i<j){
-        if(arr[i] + arr[j] == mx){
-            i++;
-            j--;
-            ++count;
-        }
-        else if(arr[i] + arr[j] > mx){
-            j--;
-        }
-        else{
-            i++;
-        }
-    }
-    cout<<count<<"\n";
-
-}
 int32_t vivek(){
 int t;
 cin>>t;

@@ -31,17 +31,32 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 void solve(){
     int n;
     cin>>n;
-    vector<int> omkar(n);
-
+    vector<int> arr(n);
     for(int i=0;i<n;i++){
-        cin>>omkar[i];
+        cin>>arr[i];
     }
-    int ans = 0;
+    bool flag = false;
+    reverse(arr.begin(),arr.end());
+    int i = 0;
+    for(i=0;i<n-1;i++){
+        if(!flag)
+        if(arr[i] <= arr[i+1]){
+            continue;
+        }
+        else{
+            flag = true;
+        }
+        if(flag){
+            if(arr[i]>= arr[i+1]){
+                continue;
+            }
+            else{
+                break;
+            }
+        }
+    }
+    cout<<n - i - 1<<endl;
 
-    for(int i=0;i<n-1;i++){
-       ans += max((long long)0, omkar[i]-omkar[i+1]);
-    }
-    cout<<ans<<"\n";
 
 }
 int32_t vivek(){

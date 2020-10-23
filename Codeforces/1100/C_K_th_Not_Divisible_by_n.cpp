@@ -29,19 +29,10 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n;
-    cin>>n;
-    vector<int> omkar(n);
-
-    for(int i=0;i<n;i++){
-        cin>>omkar[i];
-    }
-    int ans = 0;
-
-    for(int i=0;i<n-1;i++){
-       ans += max((long long)0, omkar[i]-omkar[i+1]);
-    }
-    cout<<ans<<"\n";
+    int n,k;
+    cin>>n>>k;
+    int temp = (k-1)/(n-1);
+    cout<<k+temp<<"\n";
 
 }
 int32_t vivek(){

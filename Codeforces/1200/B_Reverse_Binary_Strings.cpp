@@ -31,60 +31,39 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 void solve(){
     int n;
     cin>>n;
-    if(n == 1){
-        cout<<1<<endl;
-        return;
-    }
-    vector<int> arr(n);
-    for(int &i:arr){
-        cin>>i;
-    }
-    sort(arr.begin(),arr.end());
-    int l  = 0,r = 1;
-    int temp = 1;
-    int ans = 1;
-    while(true){
-        if(l == r){
-            ++r;
-            temp = 1;
-            if(r == n ||l == n){
-                break;
+    string val;
+    cin>>val;
+    string first,second;
+    char prev = val[0];
+    int ans = 0;
+    for(int i=1;i<n;i++){
+        if(prev == val[i]){
+            for(int j = n-1;j>i;j--){
+                    if(val[i]!=val[j] && val[j-1] == val[i]){
+
+                        string first = val.substr(0,i);
+                        if(j!=n-1)
+                        string second = val.substr(j);
+                        string mid = val.substr(i,j-1);
+                        reverse(mid.begin(),mid.end());
+                        val = first + second + mid;
+                        ans++;
+                        break;
+                    }
             }
         }
-        if(arr[r] - arr[l] <= 5){
-            temp++;
-            ans = max(ans,temp);
-            r++;
-            if(r == n ||l == n){
-                break;
-            }
-        }else{
-            ++l;
-            if(r == n ||l == n){
-                break;
-            }
-
-            --temp;
-        }
-
-
-        if(l==n || r == n){
-            break;
-        }
-
     }
-    cout<<ans;
-    
+    cout<<ans<<endl;
 
 }
 int32_t vivek(){
-int t=1;
-// cin>>t;
+int t;
+cin>>t;
 while(t-->0)
     solve();
 return 0;
 }
-// 1 2 10 12 15 17
+
 // ___.   .__                 __          .__              __    
 // \_ |__ |  | _____    ____ |  | _____  _|__|__  __ ____ |  | __
 //  | __ \|  | \__  \ _/ ___\|  |/ /\  \/ /  \  \/ // __ \|  |/ /

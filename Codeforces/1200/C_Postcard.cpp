@@ -29,52 +29,46 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n;
-    cin>>n;
-    if(n == 1){
-        cout<<1<<endl;
-        return;
+    string val;
+    cin>>val;
+    int k;
+    cin>>k;
+    int lrange =0;
+    int rrange =0;
+    for(char c:val){
+        if(c == '?'){
+            lrange -= 1;
+            rrange -= 1;
+        }
+        else if(c == '*'){
+            lrange -= 1;
+            rrange = 201;
+        }
+        else{
+            lrange ++ ;
+        }
+            rrange ++;
     }
-    vector<int> arr(n);
-    for(int &i:arr){
-        cin>>i;
-    }
-    sort(arr.begin(),arr.end());
-    int l  = 0,r = 1;
-    int temp = 1;
-    int ans = 1;
-    while(true){
-        if(l == r){
-            ++r;
-            temp = 1;
-            if(r == n ||l == n){
+    if(k>= lrange && k<= rrange){
+        for(int i=0;k>0;i++){
+            if(val[i] == '?'){
+                continue;
+            }
+            if(val[i] == '*'){
+                while(k-->0){
+                    cout<<val[i-1];
+                }
                 break;
             }
-        }
-        if(arr[r] - arr[l] <= 5){
-            temp++;
-            ans = max(ans,temp);
-            r++;
-            if(r == n ||l == n){
-                break;
+            else{
+                --k;
+                cout<<val[i];
             }
-        }else{
-            ++l;
-            if(r == n ||l == n){
-                break;
-            }
-
-            --temp;
         }
-
-
-        if(l==n || r == n){
-            break;
-        }
-
     }
-    cout<<ans;
-    
+    else{
+        cout<<"Impossible"; 
+    }
 
 }
 int32_t vivek(){
@@ -84,7 +78,7 @@ while(t-->0)
     solve();
 return 0;
 }
-// 1 2 10 12 15 17
+
 // ___.   .__                 __          .__              __    
 // \_ |__ |  | _____    ____ |  | _____  _|__|__  __ ____ |  | __
 //  | __ \|  | \__  \ _/ ___\|  |/ /\  \/ /  \  \/ // __ \|  |/ /

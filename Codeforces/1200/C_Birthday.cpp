@@ -31,50 +31,30 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 void solve(){
     int n;
     cin>>n;
-    if(n == 1){
-        cout<<1<<endl;
-        return;
-    }
     vector<int> arr(n);
     for(int &i:arr){
         cin>>i;
     }
+    vector<int> brr;
+    vector<int> last;
     sort(arr.begin(),arr.end());
-    int l  = 0,r = 1;
-    int temp = 1;
-    int ans = 1;
-    while(true){
-        if(l == r){
-            ++r;
-            temp = 1;
-            if(r == n ||l == n){
-                break;
-            }
+
+    for(int i=0;i<n;i++){
+        if(i%2 == 0){
+            brr.push_back(arr[i]);
         }
-        if(arr[r] - arr[l] <= 5){
-            temp++;
-            ans = max(ans,temp);
-            r++;
-            if(r == n ||l == n){
-                break;
-            }
-        }else{
-            ++l;
-            if(r == n ||l == n){
-                break;
-            }
-
-            --temp;
+        else{
+            last.push_back(arr[i]);
         }
-
-
-        if(l==n || r == n){
-            break;
-        }
-
     }
-    cout<<ans;
-    
+    for(int i:brr){
+        cout<<i<<" ";
+    }
+    // reverse(last.begin(),last.end());
+   while(!last.empty()){
+       cout<<last[last.size()-1]<<" ";
+       last.pop_back();
+    }
 
 }
 int32_t vivek(){
@@ -84,10 +64,19 @@ while(t-->0)
     solve();
 return 0;
 }
-// 1 2 10 12 15 17
+
 // ___.   .__                 __          .__              __    
 // \_ |__ |  | _____    ____ |  | _____  _|__|__  __ ____ |  | __
 //  | __ \|  | \__  \ _/ ___\|  |/ /\  \/ /  \  \/ // __ \|  |/ /
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
+// 1 1 2 2 3
+// 1 2      1,2
+
+// 1 3 4 2
+// 2 1 2 1
+
+// 1 3 2 4
+// 2 1 2 3 
+// 1 3 4 1

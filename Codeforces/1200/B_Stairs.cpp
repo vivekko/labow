@@ -31,36 +31,18 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 void solve(){
     int n;
     cin>>n;
-    string val;
-    cin>>val;
-    string first,second;
-    char prev = val[0];
-    int ans = 0;
-    int ans2 = 0;
-    int count = 0;
-    int count2 = 0;
-    for(int i=1;i<=n;i++){
-        if(val[i] == '1' && val[i-1] == '1')
-			count++;
-			else
-			{
-				ans += count;
-				count = 0;
-			}
-		if(val[i] == '0' && val[i-1] == '0')
-		    count2++;
-		    else
-		    {
-		    	ans2 += count2;
-		    	count2 = 0;
-		    }
-		}
-		ans += count;
-		ans2 += count2;
-		cout<<max(ans, ans2)<<endl;
-	
-    
-    // cout<<count<<endl;
+    // int prev = 1;
+    int i = 1;
+    int p=1;
+    while(p<=n){
+        n=n-p;
+        p=p*4+pow(2,i);
+        i++;
+        if(p>n){
+            break;
+        }
+    }
+    cout<<i-1<<"\n";
 
 }
 int32_t vivek(){

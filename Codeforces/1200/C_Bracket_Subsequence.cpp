@@ -29,43 +29,36 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n;
-    cin>>n;
+    int n,k;
+    cin>>n>>k;
     string val;
     cin>>val;
-    string first,second;
-    char prev = val[0];
-    int ans = 0;
-    int ans2 = 0;
-    int count = 0;
-    int count2 = 0;
-    for(int i=1;i<=n;i++){
-        if(val[i] == '1' && val[i-1] == '1')
-			count++;
-			else
-			{
-				ans += count;
-				count = 0;
-			}
-		if(val[i] == '0' && val[i-1] == '0')
-		    count2++;
-		    else
-		    {
-		    	ans2 += count2;
-		    	count2 = 0;
-		    }
-		}
-		ans += count;
-		ans2 += count2;
-		cout<<max(ans, ans2)<<endl;
-	
+    k /= 2;
+    int left  =0 ;
+    int right = 0;
+    for (char c: val) {
+        if (c == '(') {
+            cout << '(';
+            left++;
+        }
+        if (c == ')') {
+            cout << ')';
+            right++;
+        }
+        
+        if (left == k) break;
+    }
+    while (right < k) {
+        right++;
+        cout << ')';
+    }
+ 
     
-    // cout<<count<<endl;
 
 }
 int32_t vivek(){
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;
@@ -77,3 +70,6 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
+// ((((((((()()()))))))))((())((()())))(())
+// ((((((((()()()))))))))(())()()
+// ((((((((()()()))))))))((())(()

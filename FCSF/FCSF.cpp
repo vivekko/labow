@@ -29,43 +29,40 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n;
-    cin>>n;
-    string val;
-    cin>>val;
-    string first,second;
-    char prev = val[0];
-    int ans = 0;
-    int ans2 = 0;
-    int count = 0;
-    int count2 = 0;
-    for(int i=1;i<=n;i++){
-        if(val[i] == '1' && val[i-1] == '1')
-			count++;
-			else
-			{
-				ans += count;
-				count = 0;
-			}
-		if(val[i] == '0' && val[i-1] == '0')
-		    count2++;
-		    else
-		    {
-		    	ans2 += count2;
-		    	count2 = 0;
-		    }
-		}
-		ans += count;
-		ans2 += count2;
-		cout<<max(ans, ans2)<<endl;
-	
-    
-    // cout<<count<<endl;
+    cout<<"\nEnter total no. of processes: ";
+    int n;cin>>n;
+    vector<int> bs(n);
+    for(int &i:bs){
+        cin>>i;
+    }
+    vector<int> tat(n);
+    vector<int> wt(n);
+    for(int i=0;i<n;i++){
+        if(i>0)
+        tat[i] = tat[i-1] + bs[i];
+        else
+        tat[i] = bs[i];
+    }
+    wt[0] = 0;
+    for(int i=1;i<n;i++){
+        wt[i] = tat[i-1];
+    }
 
+    cout<<"\nProcess\t\t     Burst Time\t\t Waiting Time \t\t Turnaround Time";
+    for(int i=0;i<n;i++){
+        cout<<"\nP["<<(i+1)<<"]\t\t\t"<<bs[i]<<"\t\t\t"<<wt[i]<<"\t\t\t"<<tat[i];
+    }
+    
+    cout<<"\nAverage Waiting Time: "<<accumulate(wt.begin(),wt.end(),0)/n;
+    cout<<"\nAverage Turnaround Time: "<<accumulate(tat.begin(),tat.end(),0)/n;
+    cout<<"\n\nPress ENTER to continue";
+    string val;
+    getline(cin,val);
+    getline(cin,val);
 }
 int32_t vivek(){
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;

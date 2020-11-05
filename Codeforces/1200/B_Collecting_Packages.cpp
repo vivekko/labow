@@ -32,33 +32,34 @@ void solve(){
     int n;
     cin>>n;
     vector<pair<int,int>> arr(n);
-    bool wrong = false;
     for(int i=0;i<n;i++){
-        int x,y;cin>>x>>y;
-        if(y>x){
-           wrong = true;    
-        }
+        int x,y;
+        cin>>x>>y;
         arr[i] = {x,y};
     }
-    if(wrong == true){
-        cout<<"NO\n";
-        return;
-    }
-    for(int i=1;i<n;i++){
-        if(arr[i].first<arr[i-1].first || arr[i].second<arr[i-1].second){
+    sort(arr.begin(),arr.end());
+    vector<char> ans;
+    int j = 0;
+    int k = 0;
+    for(int i=0;i<n;i++){
+        if(i>0)
+        if(arr[i].second < arr[i-1].second){
             cout<<"NO\n";
             return;
         }
-        if(arr[i].first == arr[i-1].first && arr[i].second>arr[i-1].second){
-            cout<<"NO\n";
-            return;
+
+        for(;j<arr[i].first;j++){
+            ans.push_back('R');
         }
-        if(arr[i].first - arr[i-1].first < arr[i].second - arr[i-1].second){
-            cout<<"NO\n";
-            return;
+        for(;k<arr[i].second;k++){
+            ans.push_back('U');
         }
     }
     cout<<"YES\n";
+    for(char c:ans){
+        cout<<c;
+    }
+    cout<<'\n';
 }
 int32_t vivek(){
 int t;
@@ -74,4 +75,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-

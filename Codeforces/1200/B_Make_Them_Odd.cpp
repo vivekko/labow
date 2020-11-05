@@ -31,34 +31,34 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 void solve(){
     int n;
     cin>>n;
-    vector<pair<int,int>> arr(n);
-    bool wrong = false;
+    set<int> set;
+    vector<int> arr;
     for(int i=0;i<n;i++){
-        int x,y;cin>>x>>y;
-        if(y>x){
-           wrong = true;    
-        }
-        arr[i] = {x,y};
-    }
-    if(wrong == true){
-        cout<<"NO\n";
-        return;
-    }
-    for(int i=1;i<n;i++){
-        if(arr[i].first<arr[i-1].first || arr[i].second<arr[i-1].second){
-            cout<<"NO\n";
-            return;
-        }
-        if(arr[i].first == arr[i-1].first && arr[i].second>arr[i-1].second){
-            cout<<"NO\n";
-            return;
-        }
-        if(arr[i].first - arr[i-1].first < arr[i].second - arr[i-1].second){
-            cout<<"NO\n";
-            return;
+        int x;
+        cin>>x;
+        if(set.find(x) == set.end()){
+            arr.push_back(x);
+            set.insert(x);
         }
     }
-    cout<<"YES\n";
+    int count = 0;
+    sort(arr.begin(),arr.end());
+    reverse(arr.begin(),arr.end());
+    for(int i=0;i<arr.size();i++){
+        while(arr[i]%2==0){
+        if(set.find(arr[i]/2) == set.end()){
+            arr[i] /= 2;
+            count++;
+        }
+        else{
+            count++;
+            set.erase(arr[i]);
+            break;
+        }
+        }
+    }
+    cout<<count<<'\n';
+
 }
 int32_t vivek(){
 int t;
@@ -74,4 +74,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-

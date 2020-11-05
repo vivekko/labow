@@ -29,36 +29,45 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n;
-    cin>>n;
-    vector<pair<int,int>> arr(n);
-    bool wrong = false;
+    int n;cin>>n;
+    vector<int> arr(n);
+    set<int> set;
+    for(int i=1;i<=2*n;i++){
+        set.insert(i);
+    }
+    for(int &i:arr){
+        cin>>i;
+        set.erase(i);
+    }
+
+    vector<int> ans(2*n);
     for(int i=0;i<n;i++){
-        int x,y;cin>>x>>y;
-        if(y>x){
-           wrong = true;    
-        }
-        arr[i] = {x,y};
+        ans[2*i] = arr[i];
     }
-    if(wrong == true){
-        cout<<"NO\n";
-        return;
-    }
-    for(int i=1;i<n;i++){
-        if(arr[i].first<arr[i-1].first || arr[i].second<arr[i-1].second){
-            cout<<"NO\n";
-            return;
-        }
-        if(arr[i].first == arr[i-1].first && arr[i].second>arr[i-1].second){
-            cout<<"NO\n";
-            return;
-        }
-        if(arr[i].first - arr[i-1].first < arr[i].second - arr[i-1].second){
-            cout<<"NO\n";
-            return;
+
+    for(int i=0;i<2*n;i++){
+        if(i&1){
+            bool fixed = false;
+            for(int j:set){
+                // debug(j,set);
+                if(j>ans[i-1]){
+                    ans[i] = j;
+                    set.erase(j);
+                    fixed = true;
+                    break;
+                }
+            }
+            if(!fixed){
+                cout<<-1<<"\n";
+                return;
+            }
         }
     }
-    cout<<"YES\n";
+    for(int i:ans){
+        cout<<i<<" ";
+    }
+    cout<<"\n";
+
 }
 int32_t vivek(){
 int t;
@@ -74,4 +83,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-

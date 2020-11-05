@@ -29,40 +29,43 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n;
-    cin>>n;
-    vector<pair<int,int>> arr(n);
-    bool wrong = false;
-    for(int i=0;i<n;i++){
-        int x,y;cin>>x>>y;
-        if(y>x){
-           wrong = true;    
-        }
-        arr[i] = {x,y};
+    string val;
+    cin>>val;
+    int l,r;
+    l = 0,r = val.size()-1;
+    vector<int> left;
+    vector<int> right;
+    int count = 0;
+    while(l < r) {
+		while(l < val.size() && val[l] == ')')  l++;
+		while(r >= 0 && val[r] == '(')  r--;
+		if(l < val.size() && r >= 0 && l < r) {
+			left.push_back(l++ + 1);
+			right.push_back(r-- + 1);
+		}
+	}
+	if(left.empty()) {
+		cout<<"0\n";
+		return;
+	}
+
+
+	cout<<"1\n";
+	cout << 2*left.size() << '\n';
+
+	for(int i=0;i<left.size();i++){
+        cout<<left[i]<<" ";
     }
-    if(wrong == true){
-        cout<<"NO\n";
-        return;
+	for(int i=left.size()-1;i>=0;i--){
+        cout<<right[i]<<" ";
     }
-    for(int i=1;i<n;i++){
-        if(arr[i].first<arr[i-1].first || arr[i].second<arr[i-1].second){
-            cout<<"NO\n";
-            return;
+	cout << '\n';
+        
         }
-        if(arr[i].first == arr[i-1].first && arr[i].second>arr[i-1].second){
-            cout<<"NO\n";
-            return;
-        }
-        if(arr[i].first - arr[i-1].first < arr[i].second - arr[i-1].second){
-            cout<<"NO\n";
-            return;
-        }
-    }
-    cout<<"YES\n";
-}
+    
 int32_t vivek(){
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;
@@ -74,4 +77,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-

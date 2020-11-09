@@ -29,33 +29,39 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-   int n;
-    cin >> n;
-    if(n % 2 == 0) {
-        cout << "NO\n";
-        return;
+    int n,t;
+    cin>>n>>t;
+    vector<int> arr(n);
+    for(int &i:arr){
+        cin>>i;
     }
-    cout << "YES\n";
-    vector<int> smol, big;
-    for(int i = 1; i <= n; i += 2) {
-        smol.push_back(i);
-        big.push_back(2*n - i + 1);
-    }
-    vector<int> ans(2*n);
-    for(int i = 0; i < n; i++) {
-        if(i % 2 == 0) {
-            ans[i] = smol[i/2];
-            ans[n + i] = smol[i/2] + 1;
+    vector<int> b = arr;
+    vector<int> ans;
+    // sort(arr.begin(),arr.end());
+    int prefixsum = 0;
+    for(int i=0;i<n;i++){
+        prefixsum+=arr[i];
+        if(prefixsum <= t){
+            ans.push_back(0);
         }
-        else {
-            ans[i] = big[i/2];
-            ans[n + i] = big[i/2] - 1; 
+        else{
+            int tps = prefixsum;
+            sort(b.begin(),b.begin()+i);
+            int count = 0;
+            for(int j=i-1;j>=0;j--){
+                tps -= b[j];
+                ++count;
+                if(tps<=t){
+                    ans.push_back(count);
+                    break;
+                }
+            }
         }
     }
-    for(int a : ans)
-        cout << a << " ";
-    cout << '\n';
-
+    for(int i:ans){
+        cout<<i<<" ";
+    }
+    cout<<"\n";
 }
 int32_t vivek(){
 int t=1;
@@ -71,10 +77,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-
-// 1 2 3 4 5 6
-// 1 4 5 2 3 6
-
-// 
- 
- 

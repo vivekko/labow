@@ -29,37 +29,55 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-   int n;
-    cin >> n;
-    if(n % 2 == 0) {
-        cout << "NO\n";
-        return;
+    int n,k;
+    cin>>n>>k;
+    vector<int> arr(n);
+    for(int &i:arr){
+        cin>>i;
     }
-    cout << "YES\n";
-    vector<int> smol, big;
-    for(int i = 1; i <= n; i += 2) {
-        smol.push_back(i);
-        big.push_back(2*n - i + 1);
-    }
-    vector<int> ans(2*n);
-    for(int i = 0; i < n; i++) {
-        if(i % 2 == 0) {
-            ans[i] = smol[i/2];
-            ans[n + i] = smol[i/2] + 1;
-        }
-        else {
-            ans[i] = big[i/2];
-            ans[n + i] = big[i/2] - 1; 
+    vector<int> seg;
+    int sum = 0;
+    for(int i=0;i<n;i++){
+        if(sum+=arr[i]){
+            if(sum&1){
+                seg.push_back(i+1);
+                sum = 0;
+            }
         }
     }
-    for(int a : ans)
-        cout << a << " ";
-    cout << '\n';
+    if(seg.size() == k){
+        puts("YES");
+        for(int i:seg){
+            cout<<i<<" ";
+        }
+    cout<<"\n";
+    }
+    else if(seg.size()<k){
+        puts("NO");
+    }
+    else{
+        if((seg.size()%k)%2 == 0){
+            puts("YES");
+            for(int i=0;i<seg.size();i++){
+
+                if(i==k-1){
+                    cout<<seg[seg.size()-1]<<"\n";
+                    return;
+                }
+                cout<<seg[i]<<" ";
+            }
+            cout<<"\n";
+        }
+        else{
+            cout<<"NO\n";
+        }
+    }
+
 
 }
 int32_t vivek(){
-int t=1;
-// cin>>t;
+int t;
+cin>>t;
 while(t-->0)
     solve();
 return 0;
@@ -71,10 +89,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-
-// 1 2 3 4 5 6
-// 1 4 5 2 3 6
-
-// 
- 
- 

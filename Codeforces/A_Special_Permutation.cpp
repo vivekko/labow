@@ -5,7 +5,7 @@ void __print(long x) {cerr << x;}
 void __print(long long x) {cerr << x;}
 void __print(unsigned x) {cerr << x;}
 void __print(unsigned long x) {cerr << x;}
-void __print(unsigned long long x) {cerr << x;} 
+void __print(unsigned long long x) {cerr << x;}
 void __print(float x) {cerr << x;}
 void __print(double x) {cerr << x;}
 void __print(long double x) {cerr << x;}
@@ -29,9 +29,18 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n,k;cin>>n>>k;
-    string a;cin>>a;
-    
+    int n;cin>>n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++){
+        a[i]  = n - i;
+    }
+    if(n&1){
+    int temp = a[n/2];
+    a[n/2] = a[0];
+    a[0] = temp;
+    }
+    for(int i:a)    cout<<i<<" ";
+    cout<<"\n";
 
 }
 int32_t vivek(){

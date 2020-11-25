@@ -5,7 +5,7 @@ void __print(long x) {cerr << x;}
 void __print(long long x) {cerr << x;}
 void __print(unsigned x) {cerr << x;}
 void __print(unsigned long x) {cerr << x;}
-void __print(unsigned long long x) {cerr << x;} 
+void __print(unsigned long long x) {cerr << x;}
 void __print(float x) {cerr << x;}
 void __print(double x) {cerr << x;}
 void __print(long double x) {cerr << x;}
@@ -29,9 +29,37 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n,k;cin>>n>>k;
-    string a;cin>>a;
+    int n;
+    cin>>n;
+    vector<pair<int,int>> a(n);
+    for(int i=0;i<n;i++){
+        int x;cin>>x;
+        a[i] = {x,i+1};
+    }
+    sort(a.begin(),a.end());
+    vector<pair<int,int>> ans;
+    for(int i=1;i<n-1;i++){
+        if((a[i].first != a[i-1].first) && (a[i].first!= a[i+1].first)){
+            // cout<<a[i].second<<"\n";
+            ans.push_back({a[i].first,a[i].second});
+        } 
+    }
+
+    if(a[0].first!=a[1].first){
+       ans.push_back({a[0].first,a[0].second});
     
+    }
+    if(a[n-1].first!=a[n-2].first){
+        ans.push_back({a[n-1].first,a[n-1].second});
+    }
+
+
+    if(ans.empty())
+        cout<<-1<<"\n";
+    else{
+        sort(ans.begin(),ans.end());
+        cout<<ans[0].second<<"\n";
+    }
 
 }
 int32_t vivek(){

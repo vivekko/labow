@@ -5,7 +5,7 @@ void __print(long x) {cerr << x;}
 void __print(long long x) {cerr << x;}
 void __print(unsigned x) {cerr << x;}
 void __print(unsigned long x) {cerr << x;}
-void __print(unsigned long long x) {cerr << x;} 
+void __print(unsigned long long x) {cerr << x;}
 void __print(float x) {cerr << x;}
 void __print(double x) {cerr << x;}
 void __print(long double x) {cerr << x;}
@@ -28,11 +28,53 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
-void solve(){
-    int n,k;cin>>n>>k;
-    string a;cin>>a;
-    
+bool isPrime (int number) { 
+    if (number < 2) return false;
+    if (number == 2) return true;
+    if (number % 2 == 0) return false;
+    for (int i=3; (i*i) <= number; i+=2) {
+        if (number % i == 0 ) return false;
+    }
+    return true;
+}
 
+void solve(){
+int n;
+        cin>>n;
+    int temp=n;
+ 
+        map<int,int> num;
+        for(int i=2;i*i<=n;i++) {
+            if (n%i==0) {
+                while (n%i==0) {
+                    n/=i;
+                    num[i]+=1;
+                }
+            }
+        }
+        if (n>1)
+            num[n]+=1;
+ 
+    int maxn=INT32_MIN;int cur;
+        for(auto & x:num) {
+            if (x.second>maxn) {
+                maxn=x.second;
+                cur=x.first;
+            }
+        }
+ 
+        vector <int> ans;
+        while (temp%cur==0) {
+            ans.push_back(cur);
+            temp/=cur;
+        }
+        ans[(ans).size()-1]*=temp;
+        cout<<(ans).size()<<endl;
+        for(int i=0;i<ans.size();i++){
+            cout<<ans[i]<<" ";
+        }
+        cout<<endl;
+ 
 }
 int32_t vivek(){
 int t;
@@ -48,3 +90,4 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
+

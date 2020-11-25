@@ -5,7 +5,7 @@ void __print(long x) {cerr << x;}
 void __print(long long x) {cerr << x;}
 void __print(unsigned x) {cerr << x;}
 void __print(unsigned long x) {cerr << x;}
-void __print(unsigned long long x) {cerr << x;} 
+void __print(unsigned long long x) {cerr << x;}
 void __print(float x) {cerr << x;}
 void __print(double x) {cerr << x;}
 void __print(long double x) {cerr << x;}
@@ -29,10 +29,75 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    int n,k;cin>>n>>k;
-    string a;cin>>a;
-    
+    int n;cin>>n;
+    vector<int> a(n);
 
+    set<int> s;
+    for(int &i:a) {  
+        cin>>i;
+        s.insert(i);
+    }
+    if(n == 1){
+        cout<<0<<"\n";
+        return;
+    }
+    if(s.size() == 1){
+        cout<<0<<"\n";
+        return;
+    }
+    int l =1 ,r = n-2;
+    for(l = 1;l<n;){
+        if(a[l] == a[l-1]){
+            if(l == n-1){
+                cout<<0<<"\n";
+                return;
+            }
+        }
+        else break;
+        ++l;
+    }
+    while(a[r] == a[r+1]){
+        --r;
+        if(r <= l){
+            cout<<1<<"\n";
+            return;
+        }
+        continue;
+    }
+    int mx = *max_element(a.begin(),a.end());
+    
+    vector<int> c(mx+1);
+    int ans = 0;
+    for(int i=l;i<=r;i++){
+        while(a[i] == a[i+1]){++i;   continue;}
+        c[a[i]]++;
+    }
+    if(c[a[0]] == 0){
+        cout<<1<<"\n";
+        return;
+    }
+    if(c[a[n-1]] == 0){
+        cout<<1<<"\n";
+        return;
+    }
+    
+   int mn = INT32_MAX;
+    debug(c[1]);    
+    for(int i=0;i<c.size();){
+        if(c[i] == 0){
+            ++i;
+            continue;
+        }
+      
+        debug(mn,c[i],i);
+        if(mn>=c[i]){
+            ans = i;
+            mn = c[i];
+        }
+        ++i;
+    }
+    cout<<mn+1<<"\n";
+    
 }
 int32_t vivek(){
 int t;

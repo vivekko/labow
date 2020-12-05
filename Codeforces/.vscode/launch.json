@@ -1,0 +1,335 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProdSum",
+            "request": "launch",
+            "mainClass": "ProdSum",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Torch",
+            "request": "launch",
+            "mainClass": "Torch",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JugglingLetters",
+            "request": "launch",
+            "mainClass": "JugglingLetters",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - B_OmkarANDINFINITYCLOCK",
+            "request": "launch",
+            "mainClass": "B_OmkarANDINFINITYCLOCK",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_OmkarAndPass",
+            "request": "launch",
+            "mainClass": "A_OmkarAndPass",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - B_PashmakAndFlowers",
+            "request": "launch",
+            "mainClass": "B_PashmakAndFlowers",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_AcaciusAndString",
+            "request": "launch",
+            "mainClass": "A_AcaciusAndString",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_Between_the_Offices",
+            "request": "launch",
+            "mainClass": "A_Between_the_Offices",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ThreeIndices",
+            "request": "launch",
+            "mainClass": "ThreeIndices",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_Dragons",
+            "request": "launch",
+            "mainClass": "A_Dragons",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_StringTask",
+            "request": "launch",
+            "mainClass": "A_StringTask",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MagicalSticks",
+            "request": "launch",
+            "mainClass": "MagicalSticks",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - B_Football",
+            "request": "launch",
+            "mainClass": "B_Football",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_KString",
+            "request": "launch",
+            "mainClass": "A_KString",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_Dubstep",
+            "request": "launch",
+            "mainClass": "A_Dubstep",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_BusinessTrip",
+            "request": "launch",
+            "mainClass": "A_BusinessTrip",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - C_MoveBrackets",
+            "request": "launch",
+            "mainClass": "C_MoveBrackets",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_SystemOfEquations",
+            "request": "launch",
+            "mainClass": "A_SystemOfEquations",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - B_Sale",
+            "request": "launch",
+            "mainClass": "B_Sale",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_RequiredRemainder",
+            "request": "launch",
+            "mainClass": "A_RequiredRemainder",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_Football",
+            "request": "launch",
+            "mainClass": "A_Football",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_Translation",
+            "request": "launch",
+            "mainClass": "A_Translation",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_MagicNumber",
+            "request": "launch",
+            "mainClass": "A_MagicNumber",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_Little_Elephant_and_Rozdil",
+            "request": "launch",
+            "mainClass": "A_Little_Elephant_and_Rozdil",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - B_AccurateLee",
+            "request": "launch",
+            "mainClass": "B_AccurateLee",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EvenOdds",
+            "request": "launch",
+            "mainClass": "EvenOdds",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SupercentralPoint",
+            "request": "launch",
+            "mainClass": "SupercentralPoint",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JzzhuAndChildren",
+            "request": "launch",
+            "mainClass": "JzzhuAndChildren",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CodeforcesSubsequences",
+            "request": "launch",
+            "mainClass": "CodeforcesSubsequences",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PetyaAndStrings",
+            "request": "launch",
+            "mainClass": "PetyaAndStrings",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HQ9",
+            "request": "launch",
+            "mainClass": "HQ9",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AmusingJoke",
+            "request": "launch",
+            "mainClass": "AmusingJoke",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BoyOrGirl",
+            "request": "launch",
+            "mainClass": "BoyOrGirl",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WayTooLongWords",
+            "request": "launch",
+            "mainClass": "WayTooLongWords",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - IsYourHorseShoeOnTheOtherRoof",
+            "request": "launch",
+            "mainClass": "IsYourHorseShoeOnTheOtherRoof",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_helpful_Maths",
+            "request": "launch",
+            "mainClass": "A_helpful_Maths",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - A_Insomnia_cure",
+            "request": "launch",
+            "mainClass": "A_Insomnia_cure",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrivalofGeneral",
+            "request": "launch",
+            "mainClass": "ArrivalofGeneral",
+            "projectName": "Codeforces_f50b8446"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)",
+            "request": "launch",
+            "mainClass": ""
+        },
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/a.out",
+            "processId": "${command:pickProcess}",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "g++ - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "g++ build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

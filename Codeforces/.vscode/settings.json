@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "vector": "cpp"
+    },
+    "competitive-programming-helper.firstTime": false
+}

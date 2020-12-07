@@ -28,15 +28,42 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
+int c = 0;
+bool stop = false;
 void solve(){
-    
-
+    string a;int g = 0;
+    // set<char> set;
+    vector<int> fr(26);
+    while (getline(cin, a))
+{
+    if(a == "#"){
+        for(int i=0;i<26;i++){
+            if(fr[i] == g)  ++c;
+        }
+        stop = true;
+        return;
+    }
+    if (a.empty()){
+        for(int i=0;i<26;i++){
+            if(fr[i] == g)  ++c;
+        }
+        break;
+    }
+    for(char ch:a){
+        fr[ch - 'a']++;
+    }
+    ++g;
+}
 }
 int32_t vivek(){
-int t;
-cin>>t;
-while(t-->0)
+NFS(NITRO);
+// int t=5;
+// cin>>t;
+while(true){
     solve();
+    if(stop)    break;
+}
+cout<<c<<"\n";
 return 0;
 }
 

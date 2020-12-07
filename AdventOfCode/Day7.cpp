@@ -28,15 +28,41 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
+int c = 0;
 void solve(){
-    
+    vector<string> a(594);
+    for(int i=0;i<594;i++)    getline(cin,a[i]);
 
+    queue<string> b;
+    set<string> checked;
+    set<string> ans;
+    b.push("shiny gold");
+    checked.insert(b.front());
+    while(!b.empty()){
+        string ch = b.front();b.pop();
+        for(int i=0;i<594;i++){
+            
+        if(a[i].find(ch)!=string::npos && a[i].find(ch)!=0){
+            // debug(ch,a[i]);
+            ++c;
+            int pos = a[i].find("contain");
+            ans.insert(a[i].substr(0,pos-2));
+            // cout<<a[i].substr(0,pos-2)<<"\n";
+            if(checked.find(a[i].substr(0,pos-2)) == checked.end())
+                b.push(a[i].substr(0,pos-2));
+        }
+        }
+    }
+    // debug(ans);
+    cout<<ans.size();
 }
 int32_t vivek(){
-int t;
-cin>>t;
+NFS(NITRO);
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
+    // cout<<c<<"\n";
 return 0;
 }
 
@@ -46,3 +72,4 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
+     

@@ -29,10 +29,38 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
+    int n,k;cin>>n>>k;
+    vector<pair<int,int>> a(n);
+    for(int i=0;i<n;i++){
+        int x,y;cin>>x>>y;
+        a[i] = {x,y};
+    }
+    if(k == 0){
+        cout<<-1<<"\n";
+        return;
+    }
+    int moves = -1,m =0 ;
+    for(int i=0;i<a.size();i++){
+    bool yes = false;
+      for(int j=0;j<a.size();j++){
+        //   if(i == j)    continue;
+            if(abs(a[i].first - a[j].first)  +  abs(a[i].second - a[j].second) > k){
+            yes = 1;            }
+      }
+      if(!yes){
+          moves = 1;
+      }
     
+    }
+    if(moves == 1){
+        cout<<1<<"\n";
+    }
+    else
+    cout<<-1<<"\n";
 
 }
 int32_t vivek(){
+NFS(NITRO);
 int t;
 cin>>t;
 while(t-->0)

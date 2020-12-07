@@ -29,10 +29,26 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    
+    int n,m;cin>>n>>m;
+    // for(int )
+    vector<int> a(n);
+    set<int> b;
+    for(int &i:a)   cin>>i;
+    // for(int &i:b)   cin>>i;
+    for(int i=0;i<m;i++){
+        int x;cin>>x;
+        b.insert(x);
+    }
+    int count = 0;
+    for(int i:a){
+        if(b.find(i) != b.end())    ++count;
+    }
+    cout<<count<<"\n";
+
 
 }
 int32_t vivek(){
+NFS(NITRO);
 int t;
 cin>>t;
 while(t-->0)

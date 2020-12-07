@@ -29,10 +29,11 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define int long long
 #define vivek main
 void solve(){
-    
+      
 
 }
 int32_t vivek(){
+NFS(NITRO);
 int t;
 cin>>t;
 while(t-->0)

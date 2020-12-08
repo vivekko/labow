@@ -28,56 +28,56 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
-bool stop = false;
-int c = 0;
 void solve(){
-    NFS(NITRO);
-    string a;
-    // map<string,int> mp;
-    bool cid = false;
-    int pc = 0;
-     while (getline(cin, a))
-{
-    if(a == "#"){
-        debug(pc);
-        if(pc == 8)    ++c;
-        if(pc == 7 && !cid)    ++c;
-
-        // cout<<pc<<'\n';
-        stop = true;
-        return;
-    }
-    if (a.empty()){
-        debug(pc);  
-        if(pc == 8)    ++c;
-    else if(pc == 7 && !cid)    ++c;
-        break;
-    }
-
-        istringstream iss(a);
-    do
-    {
-        string subs;
-        iss >> subs;
-        if(subs.empty())
-            break;
-        // debug(subs);
-        pc++;
-        if(subs[0] == 'c')  cid = true;
-    } while (iss);
-}
-    // cout<<pc<<"\n";
+   int n;
+        cin>>n;
+        vector <int> a(n);
+        string s;
+        map <int,int> ver;
+        for(int i=0;i<n;i++) {
+            cin>>a[i];
+            s.push_back('0');
+            ver[a[i]]+=1;
+        }
+ 
+        if ((ver).size()==n)
+            s[0]='1';
+ 
+        int l=0; int r=n-1;
+        int cur=n-1; int val=1; int done=0;
+        //cout<<s<<endl;
+        while (l<r) {
+            if (a[l]==val and ver[val]==1 and a[r]>val) {
+                s[cur]='1';
+                cur--;
+                l++;
+                ver[val]-=1;
+            } else if (a[r]==val and ver[val]==1 and a[l]>val) {
+                s[cur]='1';
+                cur--;
+                r--;
+                ver[val]-=1;
+            } else {
+                if (ver[val]>=1 and a[r]>=val and a[l]>=val)
+                    s[cur]='1';
+                done=1;
+                break;
+            }
+            if (done==1)
+                break;
+            val++;
+        }
+        cout<<s<<endl;
+ 
+          
 
 }
 int32_t vivek(){
 NFS(NITRO);
-
-while(true){
+int t;
+cin>>t;
+while(t-->0)
     solve();
-    if(stop)    break;
-    
-}
-cout<<c<<"\n";
 return 0;
 }
 

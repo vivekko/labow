@@ -43,11 +43,9 @@ void solve(){
         for(int i=0;i<594;i++){
             
         if(a[i].find(ch)!=string::npos && a[i].find(ch)!=0){
-            // debug(ch,a[i]);
             ++c;
             int pos = a[i].find("contain");
             ans.insert(a[i].substr(0,pos-2));
-            // cout<<a[i].substr(0,pos-2)<<"\n";
             if(checked.find(a[i].substr(0,pos-2)) == checked.end())
                 b.push(a[i].substr(0,pos-2));
         }

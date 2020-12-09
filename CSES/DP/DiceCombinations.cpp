@@ -28,28 +28,22 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
+
 void solve(){
-    int n;
-	cin >> n;
-    vector<int> a(n+1);
-	for (int i = 1; i <= n; i++)
-		cin >> a[i];
- 
-	int ans = 0;
-	for (int i = 2; i <= n; i++)
-		ans += abs(a[i] - a[i - 1]);
- 
-	int mx = max(abs(a[1] - a[2]), abs(a[n] - a[n - 1]));
-	for (int i = 2; i < n; i++)
-		mx = max(mx, abs(a[i] - a[i - 1]) + abs(a[i + 1] - a[i]) - abs(a[i + 1] - a[i - 1]));
- 
-	cout << ans - mx << '\n';
-   
+        int n;cin>>n;
+        vector<int> dp(n+1);
+        dp[0] = 1;
+        for(int i=1;i<n+1;i++){
+            for(int j=1;j<=6;j++){
+                if(j>i) break;
+                dp[i] = (dp[i] + dp[i - j])%1000000007;
+            }
+        }
+        cout<<dp[n]<<"\n";
 }
 int32_t vivek(){
 NFS(NITRO);
-int t;
-cin>>t;
+int t=1;
 while(t-->0)
     solve();
 return 0;

@@ -28,28 +28,48 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
+#define in 600
+#define ans 14144619
 void solve(){
-    int n;
-	cin >> n;
-    vector<int> a(n+1);
-	for (int i = 1; i <= n; i++)
-		cin >> a[i];
- 
-	int ans = 0;
-	for (int i = 2; i <= n; i++)
-		ans += abs(a[i] - a[i - 1]);
- 
-	int mx = max(abs(a[1] - a[2]), abs(a[n] - a[n - 1]));
-	for (int i = 2; i < n; i++)
-		mx = max(mx, abs(a[i] - a[i - 1]) + abs(a[i + 1] - a[i]) - abs(a[i + 1] - a[i - 1]));
- 
-	cout << ans - mx << '\n';
-   
+   int l  = 0,r= 0;
+   vector<int> a(1000);
+    for(int &i:a)   cin>>i;
+   int sum = 0;
+   int x,y;
+    while(l<r || r<in){
+
+      if(sum + a[r] <= ans){
+        
+        sum += a[r++];
+        if(sum == ans){
+          // cout<<l<<" "<<r-1<<endl;
+          x = l;y = r-1;
+          break;
+        }
+      }
+      else{
+        sum -= a[l++];
+        if(sum == ans){
+          // cout<<l<<" "<<r<<endl;
+          x = l;y = r;
+          break;
+        }
+      }
+
+    }
+    int mn = INT32_MAX,mx = INT32_MIN;
+    for(int i=x;i<=y;i++){
+      mn = min(mn,a[i]);
+      mx = max(mx,a[i]);
+    }
+    // debug(mn,mx);
+    cout<<mn+mx;
+
 }
 int32_t vivek(){
 NFS(NITRO);
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;

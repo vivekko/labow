@@ -28,28 +28,41 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
+int mc = INT32_MAX;
+void solveit(vector<int> a,int sum,int final,int n,int c){
+    if(n<0){
+        return;
+    }
+    if(sum + a[n] < final){
+        ++c;
+        // debug(sum,n);
+        sum+=a[n];
+        solveit(a,sum,final,n,c);
+    }
+    else if(sum + a[n] == final){
+        // debug(sum,n);
+        // cout<<++c<<"\n";
+        ++c;
+        mc = min(c,mc);
+        return;
+    }
+    else{
+        solveit(a,sum,final,n-1,c);
+    }
+}
 void solve(){
-    int n;
-	cin >> n;
-    vector<int> a(n+1);
-	for (int i = 1; i <= n; i++)
-		cin >> a[i];
- 
-	int ans = 0;
-	for (int i = 2; i <= n; i++)
-		ans += abs(a[i] - a[i - 1]);
- 
-	int mx = max(abs(a[1] - a[2]), abs(a[n] - a[n - 1]));
-	for (int i = 2; i < n; i++)
-		mx = max(mx, abs(a[i] - a[i - 1]) + abs(a[i + 1] - a[i]) - abs(a[i + 1] - a[i - 1]));
- 
-	cout << ans - mx << '\n';
-   
+    int n,x;cin>>n>>x;
+    vector<int> a(n);
+    for(int &i:a)   cin>>i;
+    if(n == 1)  {cout<<x;return;}
+    for(int i=n-1;i>0;i--)
+    solveit(a,0,x,i,0);
+    cout<<mc<<"\n";
 }
 int32_t vivek(){
 NFS(NITRO);
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t-->0)
     solve();
 return 0;

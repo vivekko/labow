@@ -7,7 +7,8 @@
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "vector": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "random": "cpp"
     },
     "python.pythonPath": "C:\\Users\\Vivek\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
 }

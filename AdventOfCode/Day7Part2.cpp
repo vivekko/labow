@@ -42,8 +42,8 @@ void solve(){
         string ch = b.front();b.pop();
         for(int i=0;i<594;i++){
             
-        if(a[i].find(ch)!=string::npos && a[i].find(ch)!=0){
-            ++c;
+        if(a[i].find(ch)!=string::npos && a[i].find(ch)==0){
+            // ++c;
             int pos = a[i].find("contain");
             ans.insert(a[i].substr(0,pos-2));
             if(checked.find(a[i].substr(0,pos-2)) == checked.end())

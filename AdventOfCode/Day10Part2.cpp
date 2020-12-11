@@ -28,39 +28,49 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 #define int long long
 #define vivek main
-int c = 0;
+template<typename...T>void input(T &...args) {((cin >> args), ...);}
+#define all(x) (x).begin(),(x).end()
+#define vec_p vector<pair<int,int>
+// 16
+// 10
+// 15
+// 5
+// 1
+// 11
+// 7
+// 19
+// 6
+// 12
+// 4
 void solve(){
-    vector<string> a(594);
-    for(int i=0;i<594;i++)    getline(cin,a[i]);
-
-    queue<string> b;
-    set<string> checked;
-    set<string> ans;
-    b.push("shiny gold");
-    checked.insert(b.front());
-    while(!b.empty()){
-        string ch = b.front();b.pop();
-        for(int i=0;i<594;i++){
-            
-        if(a[i].find(ch)!=string::npos && a[i].find(ch)!=0){
-            ++c;
-            int pos = a[i].find("contain");
-            ans.insert(a[i].substr(0,pos-2));
-            if(checked.find(a[i].substr(0,pos-2)) == checked.end())
-                b.push(a[i].substr(0,pos-2));
+    vector<int> a(31);
+    set<int> set;
+    for(int &i:a)    cin>>i;
+     int mx = *max_element(all(a));
+    for(int i:a)    set.insert(i);
+    set.insert(mx);
+    int i= 0;
+    int one = 0;
+    int three = 0;
+    sort(all(a));
+    for(int i=a.size()-1;i>=0;i--){
+        int th = 0;
+        if(set.find(a[i]-1)!=set.end())    th++;
+        if(set.find(a[i]-2)!=set.end())    th++;
+        if(set.find(a[i]-3)!=set.end())    th++;
+        if(th>1){
+            one+=th;
         }
-        }
+        debug(a[i],one);
     }
-    debug(ans);
-    cout<<ans.size();
+    cout<<++one;
 }
 int32_t vivek(){
 NFS(NITRO);
-int t=1;
-// cin>>t;
+int t;
+cin>>t;
 while(t-->0)
     solve();
-    // cout<<c<<"\n";
 return 0;
 }
 
@@ -70,4 +80,3 @@ return 0;
 //  | \_\ \  |__/ __ \   \___|    <  \   /|  |\   /\  ___/|    < 
 //  |___  /____(____  /\___  >__|_ \  \_/ |__| \_/  \___  >__|_ \
 //      \/          \/     \/     \/                    \/     \/
-     

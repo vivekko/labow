@@ -31,48 +31,46 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define all(x) (x).begin(),(x).end()
 #define vec_p vector<pair<int,int>
 #define v vector<int>
-v weight,value;
-int n;
-// const int inf = (1e9);
-const int limit = 1e9;
-// vector<vector<int>> cache(100,vector<int> (inf));
-int cache[limit][100];
-int cache2[limit][100];
-int knapsack(int index,int w){
-    if(index == n-1){
-        if(weight[index] <= w)  return value[index];
-        else                    return 0;
+const int lim = 1e6;
+int cache[101][lim];
+v a,b;
+int w;
+
+int knapsackHard(int value,int index){
+    if(index == a.size()-1){
+        if(value == 0)  return 0;
+        return INT32_MAX;
     }
-    if(index<=49){
-        if(w<=0) return 0;
-        if(cache[index][w]!=0) return cache[index][w];
-        int left = INT32_MIN;
-        if(w-weight[index]>=0)  left = value[index] + knapsack(index+1,w-weight[index]);
-        int right = knapsack(index+1,w);
-        return cache[index][w] = max(left,right);
-    }
-    else{
-        if(w<=0) return 0;
-        if(cache2[index][w]!=0) return cache2[index][w];
-        int left = INT32_MIN;
-        if(w-weight[index]>=0)  left = value[index] + knapsack(index+1,w-weight[index]);
-        int right = knapsack(index+1,w);
-        return cache2[index][w] = max(left,right);
+    if(cache[index][value]!=-1) return cache[index][value];
+    int left = knapsackHard(value,index+1);
+    int right = INT32_MAX;
+    if(b[index]<=value) right = knapsackHard(value - b[index],index + 1);
+    return cache[index][value] = min(left,right);
+}   
+int go(int maxValue){
+    for(int i=maxValue;i>=0;--i){
+        if(knapsackHard(i,0) <= w)    return i;
+        return 0;
     }
 }
 void solve(){
-    int w;
+    int n;
     cin>>n>>w;
-    weight.resize(n);value.resize(n);
+    memset(cache,-1,sizeof(cache));
+    a.resize(n);
+    b.resize(n);
+    int maxValue = 0;
     for(int i=0;i<n;i++){
-        cin>>weight[i]>>value[i];
+        cin>>a[i]>>b[i];
+        maxValue += b[i];
     }
-    cout<<knapsack(0,w); 
+    cout<<go(maxValue);
+
 }
 int32_t vivek(){
 NFS(NITRO);
-int t=1;
-// cin>>t;
+int t;
+cin>>t;
 while(t-->0)
     solve();
 return 0;

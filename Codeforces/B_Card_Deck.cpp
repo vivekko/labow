@@ -31,47 +31,31 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define all(x) (x).begin(),(x).end()
 #define vec_p vector<pair<int,int>
 #define v vector<int>
-const int lim = 1e6;
-int cache[101][lim];
-v a,b;
-int w;
-
-int knapsackHard(int value,int index){
-    if(index == (int)a.size()){
-        if(value == 0)  return 0;
-        return INT32_MAX;
-    }
-    if(cache[index][value]!=-1) return cache[index][value];
-    int left = knapsackHard(value,index+1);
-    int right = INT32_MAX;
-    if(b[index]<=value) right = a[index] + knapsackHard(value - b[index],index + 1);
-    return cache[index][value] = min(left,right);
-}   
-int go(int maxValue){
-    for(int i=maxValue;i>=0;--i){
-        if(knapsackHard(i,0) <= w)    return i;
-        // return 0;
-    }
-    return 0;
-}
 void solve(){
-    int n;
-    cin>>n>>w;
-    memset(cache,-1,sizeof(cache));
-    a.resize(n);
-    b.resize(n);
-    int maxValue = 0;
+    int n; cin>>n;
+    v a(n);
+    for(int &i:a)   cin>>i;
+    vec_p >  ss(n);
     for(int i=0;i<n;i++){
-        cin>>a[i]>>b[i];
-        maxValue += b[i];
+        ss[i] = {a[i],i};
     }
-    cout<<go(maxValue);
+    sort(all(ss));
+    reverse(all(ss));
+    // debug(ss);
+    for(int i=0;i<n;i++){
+        for(int j = ss[i].second;j<n;j++){
+            if(a[j] == -1)  break;
+            cout<<a[j]<<" ";
+            a[j] = -1;
+        }
+    }
+    cout<<'\n';
 
 }
 int32_t vivek(){
 NFS(NITRO);
-int t=1;
-// cin>>t;
+int t;
+cin>>t;
 while(t-->0)
     solve();
 return 0;

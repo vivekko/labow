@@ -48,7 +48,7 @@ void solve(){
         if(a[i][0] == 'W') fac-=stoi(a[i].substr(1));
         if(a[i][0] == 'E') fac+=stoi(a[i].substr(1));
         if(a[i][0] == 'S') fac1-=stoi(a[i].substr(1));
-        if(a[i][0] == 'L'){         //NO THATS TOO MUCH WORK, I WONT DO IT
+        if(a[i][0] == 'L'){         
         if(stoi(a[i].substr(1)) == 90 )     {if(fac == 'N'){  fac = 'W'; fac1 = '.';} else if(fac == 'E')  {fac = 'N';} else if(fac == 'W')  {fac = 'S';} else if(fac == 'S')  {fac = 'E';}continue;}
         else if(stoi(a[i].substr(1)) == 180){if(fac == 'N'){  fac = 'S'; fac1 = '.';} else if(fac == 'E')  {fac = 'W';} else if(fac == 'W')  {fac = 'E';} else if(fac == 'S')  {fac = 'N';}continue;}
         else if(stoi(a[i].substr(1)) == 270){if(fac == 'N'){  fac = 'E'; fac1 = '.';} else if(fac == 'E')  {fac = 'S';} else if(fac == 'W')  {fac = 'N';} else if(fac == 'S')  {fac = 'W';}continue;}

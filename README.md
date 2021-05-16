@@ -1,1 +1,1 @@
-# My Code Records on Competitive Programming
+## My Solutions for various Competitive Programming problems from CF,CC,AtCoder,HackerRank, SPOJ etc

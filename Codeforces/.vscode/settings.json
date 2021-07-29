@@ -15,5 +15,5 @@
         "xutility": "cpp"
     },
     "competitive-programming-helper.firstTime": false,
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Enabled"
 }
